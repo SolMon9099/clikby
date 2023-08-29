@@ -9,6 +9,10 @@
 
     <a class="dropdown-item d-flex align-items-center" href="{{ (($link->domain->url ?? config('app.url')) . '/' . $link->alias) }}" target="_blank" rel="nofollow noreferrer noopener">@include('icons.eye', ['class' => 'text-muted fill-current width-4 height-4 '.(__('lang_dir') == 'rtl' ? 'ml-3' : 'mr-3')]) {{ __('View') }}</a>
 
+    @if(request()->is('admin/*') || Auth::check() && Auth::user()->role == 1 || Auth::check() && $link->user_id == Auth::user()->id)
+        <a class="dropdown-item d-flex align-items-center" href="{{ request()->is('admin/*') || (Auth::user()->role == 1 && $link->user_id != Auth::user()->id) ? route('admin.links.duplicate', $link->id) : route('links.duplicate', $link->id) }}">@include('icons.copy-link', ['class' => 'text-muted fill-current width-4 height-4 '.(__('lang_dir') == 'rtl' ? 'ml-3' : 'mr-3')]) {{ __('Duplicate') }}</a>
+    @endif
+
     <a class="dropdown-item d-flex align-items-center" href="{{ (($link->domain->url ?? config('app.url')) . '/' . $link->alias) }}/+" target="_blank">@include('icons.eye-preview', ['class' => 'text-muted fill-current width-4 height-4 '.(__('lang_dir') == 'rtl' ? 'ml-3' : 'mr-3')]) {{ __('Preview') }}</a>
 
     @if(isset($link->user_id))

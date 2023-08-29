@@ -72,6 +72,7 @@ Route::get('/links/{id}/edit', 'LinkController@edit')->middleware('verified')->n
 Route::get('/links/export', 'LinkController@export')->middleware('verified')->name('links.export');
 Route::post('/links/new', 'LinkController@store')->name('links.new');
 Route::post('/links/{id}/edit', 'LinkController@update');
+Route::get('/links/{id}/duplicate', 'LinkController@duplicate')->name('links.duplicate');
 Route::post('/links/{id}/destroy', 'LinkController@destroy')->name('links.destroy');
 
 // Space routes
@@ -99,6 +100,14 @@ Route::post('/pixels/{id}/edit', 'PixelController@update');
 Route::post('/pixels/{id}/destroy', 'PixelController@destroy')->name('pixels.destroy');
 
 // Stat routes
+Route::prefix('all_stats')->group(function() {
+    Route::get('/referrers', 'DashboardController@all_referrers')->name('stats.all_referrers');
+    Route::get('/countries', 'DashboardController@all_countries')->name('stats.all_countries');
+    Route::get('/browsers', 'DashboardController@all_browsers')->name('stats.all_browsers');
+    Route::get('/platforms', 'DashboardController@all_platforms')->name('stats.all_platforms');
+    Route::get('/cities', 'DashboardController@all_cities')->name('stats.all_cities');
+});
+
 Route::prefix('/stats/{id}')->group(function () {
     Route::get('/', 'StatController@index')->name('stats.overview');
 
@@ -216,6 +225,7 @@ Route::prefix('admin')->middleware('admin', 'license')->group(function () {
     Route::get('/links', 'AdminController@indexLinks')->name('admin.links');
     Route::get('/links/{id}/edit', 'AdminController@editLink')->name('admin.links.edit');
     Route::post('/links/{id}/edit', 'AdminController@updateLink');
+    Route::get('/links/{id}/duplicate', 'AdminController@duplicateLink')->name('admin.links.duplicate');
     Route::post('/links/{id}/destroy', 'AdminController@destroyLink')->name('admin.links.destroy');
 
     Route::get('/spaces', 'AdminController@indexSpaces')->name('admin.spaces');

@@ -527,7 +527,7 @@ class StatController extends Controller
         $searchBy = in_array($request->input('search_by'), ['value']) ? $request->input('search_by') : 'value';
         $sortBy = in_array($request->input('sort_by'), ['count', 'value']) ? $request->input('sort_by') : 'count';
         $sort = in_array($request->input('sort'), ['asc', 'desc']) ? $request->input('sort') : 'desc';
-        
+
         return $this->exportCSV($request, $link, __('Devices'), $range, __('Type'), __('Clicks'), $this->getDevices($link, $range, $search, $searchBy, $sortBy, $sort)->get());
     }
 
@@ -732,7 +732,7 @@ class StatController extends Controller
         if ($link->user->cannot('dataExport', ['App\Models\User'])) {
             abort(403);
         }
-        
+
         $content = CSV\Writer::createFromFileObject(new \SplTempFileObject);
 
         // Generate the header

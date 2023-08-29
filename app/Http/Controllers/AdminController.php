@@ -1146,6 +1146,39 @@ class AdminController extends Controller
         return redirect()->route('admin.links.edit', $id)->with('success', __('Settings saved.'));
     }
 
+    public function duplicateLink(UpdateLinkRequest $request, $id)
+    {
+        $link = Link::where('id', '=', $id)->firstOrFail();
+        $new_link = new Link;
+        $new_link['user_id'] = $link->user_id;
+        $new_link['alias'] = $this->generateAlias();
+        $new_link['url'] = $link->url;
+        $new_link['title'] = $link->title;
+        $new_link['description'] = $link->description;
+        $new_link['image'] = $link->image;
+        $new_link['target_type'] = $link->target_type;
+        $new_link['country_target'] = $link->country_target;
+        $new_link['platform_target'] = $link->platform_target;
+        $new_link['language_target'] = $link->language_target;
+        $new_link['rotation_target'] = $link->rotation_target;
+        $new_link['last_rotation'] = $link->last_rotation;
+        $new_link['password'] = $link->password;
+        $new_link['disabled'] = $link->disabled;
+        $new_link['privacy'] = $link->privacy;
+        $new_link['privacy_password'] = $link->privacy_password;
+        $new_link['expiration_url'] = $link->expiration_url;
+        $new_link['expiration_clicks'] = $link->expiration_clicks;
+        $new_link['clicks'] = 0;
+        $new_link['space_id'] = $link->space_id;
+        $new_link['domain_id'] = $link->domain_id;
+        $new_link['ends_at'] = $link->ends_at;
+        $new_link['created_at'] = date('Y-m-d H:i:s');
+        $new_link['updated_at'] = date('Y-m-d H:i:s');
+        $new_link->save();
+        return redirect()->route('links')->with('success', __('Duplicated Successfully.'));
+
+    }
+
     /**
      * Delete the Link.
      *

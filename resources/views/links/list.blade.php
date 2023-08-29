@@ -146,7 +146,7 @@
                     <div class="row align-items-center">
                         <div class="col">
                             <div class="row align-items-center">
-                                <div class="col-12 col-md-8 col-lg-6 d-flex text-truncate">
+                                <div class="col-12 col-md-8 col-lg-4 d-flex text-truncate">
                                     {{ __('URL') }}
                                 </div>
 
@@ -160,6 +160,10 @@
 
                                 <div class="d-none d-lg-block col-lg-2 text-truncate">
                                     {{ __('Created at') }}
+                                </div>
+
+                                <div class="d-none d-lg-block col-lg-2 text-truncate">
+                                    {{ __('Last edit') }}
                                 </div>
                             </div>
                         </div>
@@ -181,7 +185,7 @@
                         <div class="row align-items-center">
                             <div class="col text-truncate">
                                 <div class="row align-items-center">
-                                    <div class="col-12 col-md-8 col-lg-6 d-flex text-truncate">
+                                    <div class="col-12 col-md-8 col-lg-4 d-flex text-truncate">
                                         <div class="text-truncate">
                                             <div class="d-flex align-items-center">
                                                 <img src="https://icons.duckduckgo.com/ip3/{{ parse_url($link->url)['host'] }}.ico" rel="noreferrer" class="width-4 height-4 {{ (__('lang_dir') == 'rtl' ? 'ml-3' : 'mr-3') }}">
@@ -213,6 +217,10 @@
 
                                     <div class="d-none d-lg-flex col-lg-2 text-truncate">
                                         <span class="text-truncate" data-tooltip="true" title="{{ $link->created_at->tz(Auth::user()->timezone ?? config('app.timezone'))->format(__('Y-m-d') . ' H:i:s') }}">{{ $link->created_at->diffForHumans() }}</span>
+                                    </div>
+
+                                    <div class="d-none d-lg-flex col-lg-2 text-truncate">
+                                        <span class="text-truncate" data-tooltip="true" title="{{ $link->updated_at->tz(Auth::user()->timezone ?? config('app.timezone'))->format(__('Y-m-d') . ' H:i:s') }}">{{ $link->updated_at->diffForHumans() }}</span>
                                     </div>
                                 </div>
                             </div>
