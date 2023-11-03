@@ -66,7 +66,7 @@ p {
     line-height: 1.7;
     color: $body-color;
     &:last-child {
-        margin-bottom: 0; 
+        margin-bottom: 0;
     }
 }
 .ptb-100 {
@@ -225,7 +225,7 @@ Saas Landing CSS
     }
     &[aria-expanded="true"] {
         .top-bar {
-            transform: rotate(45deg);      
+            transform: rotate(45deg);
             left: 0;
         }
         .middle-bar {
@@ -270,8 +270,8 @@ Saas Landing CSS
             max-width: 485px;
             margin:0 auto 30px;
         }
-    } 
-    
+    }
+
     .saas-banner-btn {
         .default-btn {
             &.bg-white {
@@ -354,7 +354,7 @@ Saas Landing CSS
         }
     }
 }
- 
+
 /* Services Area CSS */
 .saas-services-area{
     &.pt-260 {
@@ -580,7 +580,7 @@ Saas Landing CSS
     &:last-child {
         margin-bottom: 0;
     }
-    
+
     .icon {
         font-size: 30px;
         position: absolute;
@@ -969,7 +969,7 @@ Saas Landing CSS
                 right: 0;
                 top: 0;
                 transition: $transition;
-        
+
                 &:hover {
                     background-color: $black-color;
                 }
@@ -1075,7 +1075,7 @@ Saas Landing CSS
                     &:hover {
                         color: $black-color;
                     }
-                } 
+                }
             }
         }
         .footer-image {
@@ -1108,7 +1108,7 @@ Saas Landing CSS
     }
     .modal-content {
         border-radius: 0;
-        
+
         .user-form {
             padding: 15px 20px 20px;
 
@@ -1124,7 +1124,7 @@ Saas Landing CSS
                     box-shadow: none;
                 }
             }
-            
+
             .default-btn {
                 background-color: $main-color;
                 color: $white-color;
@@ -1301,7 +1301,7 @@ SEO Marketing CSS
                     background-color: $black-color;
                     border: 1px solid $black-color;
                     box-shadow: 0px 20px 20px 0px #cecece;
-                } 
+                }
             }
             .seo-btn-bg2 {
                 background-color: transparent;
@@ -1568,7 +1568,7 @@ SEO Marketing CSS
     .choose-card-contant {
         padding-left: 40px;
     }
-} 
+}
 .choose-card {
     margin-bottom: 30px;
     i {
@@ -1599,7 +1599,7 @@ SEO Marketing CSS
     h3 {
         font-size: 24px;
     }
-}  
+}
 .video-btn-1 {
     a {
         background-color: $white-color;
@@ -1678,7 +1678,7 @@ SEO Marketing CSS
 .tab {
     .tabs-item {
         display: none;
-        
+
         &:first-child {
             display: block;
         }
@@ -2061,7 +2061,7 @@ Startup Agency CSS
                 animation-timing-function: linear;
             }
             .shape-19 {
-                position: absolute;   
+                position: absolute;
                 top: -20px;
                 right: 40px;
                 animation-name: rotateme;
@@ -2305,7 +2305,7 @@ Startup Agency CSS
     }
     &.testimonials-bg {
         background-color: #f4f4f4;
-        
+
         .section-title {
             position: relative;
         }
@@ -3337,25 +3337,25 @@ App Landing CSS
 
 @keyframes moveBounce {
     0% {
-        transform: translateY(0px); 
+        transform: translateY(0px);
     }
     50% {
-        transform: translateY(20px); 
+        transform: translateY(20px);
     }
     100% {
-        transform: translateY(0px); 
-    } 
+        transform: translateY(0px);
+    }
 }
 @keyframes moveLeftBounce {
     0% {
-        transform: translateX(0); 
+        transform: translateX(0);
     }
     50% {
-        transform: translateX(5px); 
+        transform: translateX(5px);
     }
     100% {
-        transform: translateX(0); 
-    } 
+        transform: translateX(0);
+    }
 }
 @keyframes ripple {
     0% {

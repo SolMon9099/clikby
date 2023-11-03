@@ -1,7 +1,7 @@
 @extends('layouts.wrapper')
 
 @section('body')
-    <body class="d-flex flex-column">
+    <body class="d-flex flex-column" data-spy="scroll" data-offset="70">
         @guest
             @if(config('settings.announcement_guest'))
                 @include('shared.announcement', ['message' => config('settings.announcement_guest'), 'type' => config('settings.announcement_guest_type'), 'id' => config('settings.announcement_guest_id')])

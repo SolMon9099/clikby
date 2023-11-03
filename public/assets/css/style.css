@@ -43,7 +43,7 @@ img {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #242424;
+  /* color: #242424; */
   font-weight: bold;
 }
 
@@ -63,7 +63,7 @@ button:focus {
 p {
   margin-bottom: 10px;
   line-height: 1.7;
-  color: #7f7f7f;
+  /* color: #7f7f7f; */
 }
 
 .primees {
@@ -164,7 +164,7 @@ Saas Landing CSS
 }
 
 .main-navbar .navbar-nav .nav-link {
-  color: #301d44;
+  /* color: #301d44; */
   padding-left: 0;
   padding-right: 0;
   padding-bottom: 10px;
@@ -594,7 +594,7 @@ Saas Landing CSS
 
 .prising-card ul li {
   font-size: 18px;
-  color: #242424;
+  /* color: #242424; */
   margin-bottom: 5px;
   position: relative;
   padding-left: 30px;
@@ -1150,7 +1150,7 @@ Saas Landing CSS
 
 /* Footer Area CSS */
 .footer-area {
-  background-color: #3e1b1b;
+  background-color: #bc35dc;
 }
 
 .footer-area.bor-radius-right {
@@ -1498,8 +1498,8 @@ SEO Marketing CSS
 
 /* Seo banner Area */
 .seo-banner-area {
-  background-color: #f6f4ff;
-  padding-top: 180px;
+  /* background-color: #f6f4ff; */
+  padding-top: 100px;
   position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -1787,7 +1787,7 @@ SEO Marketing CSS
 
 /* Choose Us Area */
 .choose-us-area {
-  background-color: #f6f4ff;
+  /* background-color: #f6f4ff; */
 }
 
 .choose-us-area .chooses-img-contant {
@@ -1965,14 +1965,14 @@ SEO Marketing CSS
 
 /* Our Services Area */
 .our-services-area {
-  background-color: #f6f4ff;
+  /* background-color: #f6f4ff; */
 }
 
 .our-service-card {
   padding: 40px 30px;
   -webkit-box-shadow: 0px 0px 20px 1px #e0dddd;
           box-shadow: 0px 0px 20px 1px #e0dddd;
-  background-color: #ffffff;
+  /* background-color: #ffffff; */
   margin-bottom: 30px;
   border-radius: 10px;
   text-align: center;
@@ -2049,7 +2049,7 @@ SEO Marketing CSS
 
 /* Case Study Area */
 .case-study-area {
-  background-color: #f6f4ff;
+  /* background-color: #f6f4ff; */
 }
 
 .case-study-card {

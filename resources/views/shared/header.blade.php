@@ -1,5 +1,5 @@
 @guest
-    <div id="header" class="header sticky-top shadow bg-base-0 z-1025">
+    {{-- <div id="header" class="header sticky-top shadow bg-base-0 z-1025">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light px-0 py-3">
                 <a href="{{ route('home') }}" aria-label="{{ config('settings.title') }}" class="navbar-brand p-0">
@@ -32,7 +32,52 @@
                 </div>
             </nav>
         </div>
-    </div>
+    </div> --}}
+    <nav class="navbar fixed-top navbar-expand-md main-navbar seo-nav">
+        <div class="container">
+            <a href="{{ route('home') }}" aria-label="{{ config('settings.title') }}" class="navbar-brand p-0">
+                <div class="logo">
+                    <img src="{{asset('assets/images/logo.png')}}" alt="logo" style="max-height:64px;">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="icon-bar top-bar"></span>
+                <span class="icon-bar middle-bar"></span>
+                <span class="icon-bar bottom-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav pt-2 p-lg-0 {{ (__('lang_dir') == 'rtl' ? 'mr-auto' : 'ml-auto') }}">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">{{ __('Home') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">{{ __('Service') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pricing">{{ __('Pricing') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#case-study">{{ __('Cases') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">{{ __('Solutions') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}" role="button">{{ __('Login') }}</a>
+                    </li>
+                    @if(config('settings.registration'))
+                        <li class="nav-item d-flex align-items-center">
+                            <a class="btn btn-outline-primary" href="{{ route('register') }}" role="button">{{ __('Register') }}</a>
+                        </li>
+                    @endif
+                </ul>
+                <div class="nav-btn">
+                    <a href="#contact" class="default-btn bg-main">{{ __('Contact') }}</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 @else
     <div id="header" class="header sticky-top shadow bg-base-0 z-1025 d-lg-none">
         <div class="container-fluid">

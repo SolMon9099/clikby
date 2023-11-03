@@ -3,6 +3,7 @@
 return [
     'iOS',
     'Android',
+    'HarmonyOS',
     'Windows',
     'OS X',
     'Linux',

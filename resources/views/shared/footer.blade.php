@@ -1,6 +1,6 @@
-<footer id="footer" class="footer bg-base-0{{ isset($lightweight) ? ' d-print-none' : '' }}">
+<footer id="footer" class="footer-area pt-70 footer {{ isset($lightweight) ? ' d-print-none' : '' }}">
     <div class="container py-5">
-        @if(isset($lightweight) == false)
+        {{-- @if(isset($lightweight) == false)
             <div class="row">
                 <div class="col-12 col-lg">
                     <ul class="nav p-0 mx-n3 mb-3 mb-lg-0 d-flex flex-column flex-lg-row">
@@ -40,25 +40,94 @@
                 </div>
             </div>
             <hr>
-        @endif
+        @endif --}}
+        <div class="row">
+            <div class="col-lg-4 col-sm-6">
+                <div class="footer-widget">
+                    <div class="logo">
+                        <img src="assets/images/logo-white.png" alt="logo">
+                    </div>
+                    <p>CLIK.BY - {{__("is a service for creating short links for mailing, creating and conducting analysis using A/B tests and using them in advertising")}}.</p>
+
+                    <ul class="footer-social">
+                        <li>
+                            <a class="bg-1" href="https://www.facebook.com/raffertyagency" target="_blank">
+                                <i class="lab la-facebook-f bg-6"></i>
+                            </a>
+                        </li>
+                        <!-- li>
+                            <a class="bg-2" href="#" target="_blank">
+                                <i class="lab la-telegram bg-6"></i>
+                            </a>
+                        </li -->
+                        <li>
+                            <a class="bg-4" href="https://www.instagram.com/raffertyagency/" target="_blank">
+                                <i class="lab la-instagram bg-6"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="bg-4" href="https://twitter.com/Raffertyagency" target="_blank">
+                                <i class="lab la-twitter bg-6"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col-lg-5 col-sm-6">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6">
+                    </div>
+
+                    <div class="col-lg-6 col-sm-6">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-6 offset-sm-4 offset-lg-0">
+                <div class="footer-widget">
+                    <h3 class="title">{{__("Download the application")}}:</h3>
+                    <div class="footer-image">
+                        <a href="https://play.google.com/store/apps/dev?id=5608668665218254297"  target="_blank">
+                            <img src="assets/images/app-img/black-googleplay.svg" alt="Image">
+                        </a>
+                        <a href="#"  target="_blank">
+                            <img src="assets/images/app-img/black-appstore.svg" alt="Image">
+                        </a>
+                        <a href="#"  target="_blank">
+                            <img src="assets/images/app-img/black-huawei.svg" alt="Image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contacts" class="copyright-text">
+            <p>Copyright @ 2022 CLIK.BY <img src="assets/images/rockets.gif" alt="hand" style="width:48px;"></p>
+           <p><img src="assets/images/pay-sys.png" alt="PROapp.by создание мобильных приложений в Минске, Москве, России"></p>
+            <p style="font-size: 12px;">ООО {{__("Proactive Technology")}}, УНП 193648169, {{__("Certificate of state registration issued by the Minsk City Executive Committee")}}, 22.09.2022. {{__("Current account")}}: BY56PJCB3012076587100000093, {{__("SWIFT BIC")}}: {{__("PJCBBY2X in Priorbank OJSC. Legal and postal address: Republic of Belarus, Minsk, st. Olesheva, 9, room. 5. Tel.: +375 25 528 24 22")}}</p>
+            <p><a href="https://proapp.by/public/offer.pdf">{{__("Public contract")}}</a> | <a href="https://proapp.by/public/policy.pdf">{{__("Privacy Policy")}}</a> | <a href="https://proapp.by/public/payments.pdf">{{__("Online payment")}}</a> | <a href="mailto:info@proapp.by">{{__("Write to us")}}: info@proapp.by</a></p>
+            <p>CLIK.BY 💙</p>
+        </div>
         <div class="row">
             <div class="col-12 col-lg order-2 order-lg-1">
-                <div class="text-muted py-1">{{ __('© :year :name.', ['year' => now()->year, 'name' => config('settings.title')]) }} {{ __('All rights reserved.') }}</div>
+                {{-- <div class="text-muted py-1">{{ __('© :year :name.', ['year' => now()->year, 'name' => config('settings.title')]) }} {{ __('All rights reserved.') }}</div> --}}
             </div>
             <div class="col-12 col-lg-auto order-1 order-lg-2 d-flex flex-column flex-lg-row">
                 <div class="nav p-0 mx-n3 mb-3 mb-lg-0 d-flex flex-column flex-lg-row">
                     <div class="nav-item d-flex">
-                        <a href="#" class="nav-link py-1 d-flex align-items-center text-secondary" id="dark-mode" data-tooltip="true" title="{{ __('Change theme') }}">
+                        <a href="#" class="nav-link py-1 d-flex align-items-center text-light" id="dark-mode" data-tooltip="true" title="{{ __('Change theme') }}">
                             @include('icons.contrast', ['class' => 'width-4 height-4 fill-current ' . (__('lang_dir') == 'rtl' ? 'ml-2' : 'mr-2')])
-                            <span class="text-muted" data-text-light="{{ __('Light') }}" data-text-dark="{{ __('Dark') }}">{{ (config('settings.dark_mode') == 1 ? __('Dark') : __('Light')) }}</span>
+                            <span class="text-light" data-text-light="{{ __('Light') }}" data-text-dark="{{ __('Dark') }}">{{ (config('settings.dark_mode') == 1 ? __('Dark') : __('Light')) }}</span>
                         </a>
                     </div>
 
                     @if(count(config('app.locales')) > 1)
                         <div class="nav-item d-flex">
-                            <a href="#" class="nav-link py-1 d-flex align-items-center text-secondary" data-toggle="modal" data-target="#change-language-modal" data-tooltip="true" title="{{ __('Change language') }}">
+                            <a href="#" class="nav-link py-1 d-flex align-items-center text-light" data-toggle="modal" data-target="#change-language-modal" data-tooltip="true" title="{{ __('Change language') }}">
                                 @include('icons.language', ['class' => 'width-4 height-4 fill-current ' . (__('lang_dir') == 'rtl' ? 'ml-2' : 'mr-2')])
-                                <span class="text-muted">{{ config('app.locales')[config('app.locale')]['name'] }}</span>
+                                <span class="text-light">{{ config('app.locales')[config('app.locale')]['name'] }}</span>
                             </a>
                         </div>
 

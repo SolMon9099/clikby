@@ -158,18 +158,21 @@ class DashboardController extends Controller
                 ->whereBetween('date', [$range['from'], $range['to']])
                 ->orderBy('date', 'asc')
                 ->get();
-
             $output = ['00' => 0, '01' => 0, '02' => 0, '03' => 0, '04' => 0, '05' => 0, '06' => 0, '07' => 0, '08' => 0, '09' => 0, '10' => 0, '11' => 0, '12' => 0, '13' => 0, '14' => 0, '15' => 0, '16' => 0, '17' => 0, '18' => 0, '19' => 0, '20' => 0, '21' => 0, '22' => 0, '23' => 0];
 
             // Map the values to each date
             foreach ($rows as $row) {
-                $output[$row->value] = $row->count;
+                if (!isset($output[$row->value])){
+                    $output[$row->value] = 0;
+                }
+                $output[$row->value] += $row->count;
             }
         } else {
             $rows = Stat::select([
                     DB::raw("date_format(`date`, '" . str_replace(['Y', 'm', 'd'], ['%Y', '%m', '%d'], $range['format']) . "') as `date_result`, SUM(`count`) as `aggregate`")
                 ])
                 ->whereBetween('date', [$range['from'], $range['to']])
+                ->where([['name', '=', 'clicks']])
                 ->groupBy('date_result')
                 ->orderBy('date_result', 'asc')
                 ->get();

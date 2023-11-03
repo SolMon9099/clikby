@@ -1,6 +1,6 @@
 (function($) {
 	'use strict';
-	
+
 	// START MENU JS
 	$(window).on('scroll', function() {
 		if ($(this).scrollTop() > 50) {
@@ -8,8 +8,8 @@
 		} else {
 			$('.main-navbar').removeClass('menu-shrink');
 		}
-	});	
-	
+	});
+
 	$('.navbar-nav li a').on('click', function(e){
 		var anchor = $(this);
 		$('html, body').stop().animate({
@@ -22,7 +22,7 @@
 		if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
 			$(this).collapse('hide');
 		}
-	});	
+	});
 
     // Popup Video
 	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
@@ -48,7 +48,7 @@
 			"<i class='las la-long-arrow-alt-right'></i>"
 		]
 	})
-	
+
 	// Partner Slider
 	$('.partner-slider').owlCarousel({
 		loop: true,
@@ -135,7 +135,7 @@
 			}
 		}
 	})
-	
+
 	// Odometer JS
 	$('.odometer').appear(function(e) {
 		var odo = $(".odometer");
@@ -148,7 +148,7 @@
 	// Tabs
 	$('.tab ul.tabs').addClass('active').find('> li:eq(0)').addClass('current');
 	$('.tab ul.tabs li').on('click', function (g) {
-		var tab = $(this).closest('.tab'), 
+		var tab = $(this).closest('.tab'),
 		index = $(this).closest('li').index();
 		tab.find('ul.tabs > li').removeClass('current');
 		$(this).closest('li').addClass('current');
@@ -157,7 +157,7 @@
 		g.preventDefault();
 	});
 
-	
+
 	// WOW JS
 	new WOW().init();
 
@@ -201,7 +201,7 @@
 		}
 		$("#validator-newsletter").removeClass().addClass(msgClasses).text(msg);
 	}
-	
+
 	// AJAX MailChimp JS
 	$(".newsletter-form").ajaxChimp({
 		url: "https://EnvyTheme.us20.list-manage.com/subscribe/post?u=60e1ffe2e8a68ce1204cd39a5&amp;id=42d6d188d9", // Your url MailChimp
@@ -220,14 +220,14 @@
         } else {
             $('.go-top').removeClass('active');
         }
-	});	
+	});
     $(function(){
         $(window).on('scroll', function(){
             var scrolled = $(window).scrollTop();
             if (scrolled > 600) $('.go-top').addClass('active');
             if (scrolled < 600) $('.go-top').removeClass('active');
-        });  
-        
+        });
+
         $('.go-top').on('click', function() {
             $("html, body").animate({ scrollTop: "0" },  500);
         });

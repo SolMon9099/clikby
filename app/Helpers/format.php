@@ -126,7 +126,8 @@ function formatPlatform($key)
         'BlackBerry OS' => 'bbos',
         'Tizen' => 'tizen',
         'KaiOS' => 'kaios',
-        'BlackBerry Tablet OS' => 'bbos'
+        'BlackBerry Tablet OS' => 'bbos',
+        'HarmonyOS' => 'harmony'
     ];
 
     if (array_key_exists($key, $platforms)) {
