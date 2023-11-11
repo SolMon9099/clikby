@@ -45,7 +45,7 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="footer-widget">
                     <div class="logo">
-                        <img src="assets/images/logo-white.png" alt="logo">
+                        <img src="{{ asset('assets/images/logo-white.png') }}" alt="logo">
                     </div>
                     <p>CLIK.BY - {{__("is a service for creating short links for mailing, creating and conducting analysis using A/B tests and using them in advertising")}}.</p>
 
@@ -90,13 +90,13 @@
                     <h3 class="title">{{__("Download the application")}}:</h3>
                     <div class="footer-image">
                         <a href="https://play.google.com/store/apps/dev?id=5608668665218254297"  target="_blank">
-                            <img src="assets/images/app-img/black-googleplay.svg" alt="Image">
+                            <img src="{{ asset('assets/images/app-img/black-googleplay.svg') }}" alt="Image">
                         </a>
                         <a href="#"  target="_blank">
-                            <img src="assets/images/app-img/black-appstore.svg" alt="Image">
+                            <img src="{{ asset('assets/images/app-img/black-appstore.svg') }}" alt="Image">
                         </a>
                         <a href="#"  target="_blank">
-                            <img src="assets/images/app-img/black-huawei.svg" alt="Image">
+                            <img src="{{ asset('assets/images/app-img/black-huawei.svg') }}" alt="Image">
                         </a>
                     </div>
                 </div>
@@ -104,8 +104,8 @@
         </div>
 
         <div id="contacts" class="copyright-text">
-            <p>Copyright @ 2022 CLIK.BY <img src="assets/images/rockets.gif" alt="hand" style="width:48px;"></p>
-           <p><img src="assets/images/pay-sys.png" alt="PROapp.by создание мобильных приложений в Минске, Москве, России"></p>
+            <p>Copyright @ 2022 CLIK.BY <img src="{{ asset('assets/images/rockets.gif') }}" alt="hand" style="width:48px;"></p>
+           <p><img src="{{ asset('assets/images/pay-sys.png') }}" alt="PROapp.by создание мобильных приложений в Минске, Москве, России"></p>
             <p style="font-size: 12px;">ООО {{__("Proactive Technology")}}, УНП 193648169, {{__("Certificate of state registration issued by the Minsk City Executive Committee")}}, 22.09.2022. {{__("Current account")}}: BY56PJCB3012076587100000093, {{__("SWIFT BIC")}}: {{__("PJCBBY2X in Priorbank OJSC. Legal and postal address: Republic of Belarus, Minsk, st. Olesheva, 9, room. 5. Tel.: +375 25 528 24 22")}}</p>
             <p><a href="https://proapp.by/public/offer.pdf">{{__("Public contract")}}</a> | <a href="https://proapp.by/public/policy.pdf">{{__("Privacy Policy")}}</a> | <a href="https://proapp.by/public/payments.pdf">{{__("Online payment")}}</a> | <a href="mailto:info@proapp.by">{{__("Write to us")}}: info@proapp.by</a></p>
             <p>CLIK.BY 💙</p>
